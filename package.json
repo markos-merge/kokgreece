@@ -11,7 +11,7 @@
     "test": "tsx --test lib/exam.test.ts"
   },
   "engines": {
-    "node": ">=20 <25"
+    "node": ">=20"
   },
   "dependencies": {
     "@next/swc-wasm-nodejs": "15.5.23",
