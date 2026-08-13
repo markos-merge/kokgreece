@@ -1,4 +1,6 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --bg: #100e0b;
@@ -10,18 +12,6 @@
   --line: #3a332b;
   --danger: #e05252;
   --ok: #4caf6a;
-}
-
-@theme inline {
-  --color-bg: var(--bg);
-  --color-panel: var(--bg-2);
-  --color-gold: var(--gold);
-  --color-gold-2: var(--gold-2);
-  --color-ink: var(--ink);
-  --color-muted: var(--muted);
-  --color-line: var(--line);
-  --color-danger: var(--danger);
-  --color-ok: var(--ok);
   --font-sans: "Manrope", "Noto Sans", ui-sans-serif, system-ui, sans-serif;
 }
 

@@ -44,10 +44,17 @@ If Vercel asks which branch to deploy, use `main` after you merge the pull reque
 
 ## Develop (computer only)
 
+Use Node 20 or 22 (not 24+). Then:
+
 ```bash
+rm -rf node_modules .next
 npm install
 npm test
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
+
+If `npm run dev` used to crash with `bus error (core dumped)`, that was Next.js’s native SWC binary. This repo now uses the WASM compiler instead. After pulling the latest code, run the `rm` / `npm install` steps above once.
+
+If Vercel asks which branch to deploy, use `main` after you merge the pull request.

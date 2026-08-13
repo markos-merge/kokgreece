@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+import { spawn } from "node:child_process";
+import { createRequire } from "node:module";
+
+process.env.NEXT_TEST_WASM = "1";
+process.env.RUST_MIN_STACK ??= "8388608";
+
+const require = createRequire(import.meta.url);
+const nextBin = require.resolve("next/dist/bin/next");
+const child = spawn(process.execPath, [nextBin, ...process.argv.slice(2)], {
+  stdio: "inherit",
+  env: process.env
+});
+
+child.on("exit", (code, signal) => {
+  if (signal) process.exit(1);
+  process.exit(code ?? 1);
+});
