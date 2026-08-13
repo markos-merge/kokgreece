@@ -10,11 +10,19 @@ const noto = Noto_Sans({ subsets: ["latin", "greek"], variable: "--font-noto" })
 export const metadata: Metadata = {
   title: "ΚΟΚ Ελλάς — Τεστ θεωρίας διπλώματος",
   description:
-    "Εξάσκηση για τις θεωρητικές εξετάσεις ΚΟΚ: εύκολο τεστ, τεστ ενότητας και προσομοίωση Υπουργείου."
+    "Εξάσκηση για τις θεωρητικές εξετάσεις ΚΟΚ: εύκολο τεστ, τεστ ενότητας και προσομοίωση Υπουργείου.",
+  applicationName: "ΚΟΚ Ελλάς",
+  appleWebApp: {
+    capable: true,
+    title: "ΚΟΚ Ελλάς",
+    statusBarStyle: "black-translucent"
+  }
 };
 
 export const viewport = {
-  themeColor: "#f0a12a"
+  themeColor: "#f0a12a",
+  width: "device-width",
+  initialScale: 1
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
